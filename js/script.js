@@ -29,12 +29,12 @@ document.addEventListener("submit", (event) =>{
     let lucroDia = calcularLucroDia(faturamentoDia, custoAlimentacao, custoCombustivel)
     let faturamentoPorKm = calcularFaturamentoPorKm(faturamentoDia, kmRodado)
 
-    console.log(`O faturamento do dia foi de: R$ ${faturamentoDia}`)
-    console.log(`O consumo de combustível foi de: ${litrosCombustivel.toFixed(2)} litros`)
-    console.log(`O custo com combustível foi de: R$ ${custoCombustivel.toFixed(2)}`)
-    console.log(`O custo com alimentacao foi de: R$ ${custoAlimentacao.toFixed(2)}`)
-    console.log(`O faturamento por KM foi de: R$ ${faturamentoPorKm.toFixed(2)}`)
-    console.log(`O lucro do dia foi de: R$ ${lucroDia.toFixed(2)}`)
+    document.getElementById("resultadoFaturamentoDia").innerHTML = `O faturamento do dia foi de: R$ ${faturamentoDia.toFixed(2)}`;
+    document.getElementById("resultadoConsumoCombustivel").innerHTML = `O consumo de combustível foi de: ${litrosCombustivel.toFixed(2)} litros`;
+    document.getElementById("resultadoCustoCombustivel").innerHTML = `O custo com combustível foi de: R$ ${custoCombustivel.toFixed(2)}`;
+    document.getElementById("resultadoCustoAlimentacao").innerHTML = `O custo com alimentação foi de: R$ ${custoAlimentacao.toFixed(2)}`;
+    document.getElementById("resultadoFaturamentoPorKm").innerHTML = `O faturamento por KM foi de: R$ ${faturamentoPorKm.toFixed(2)}`;
+    document.getElementById("resultadoLucroDia").innerHTML = `O lucro do dia foi de: R$ ${lucroDia.toFixed(2)}`;
 
 })
 
