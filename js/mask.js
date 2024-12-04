@@ -2,7 +2,9 @@ $(document).ready(function(){
     $('#ifaturamentoDia').on('input', function() {
         var faturamentodia = $(this).val();
         
-        if (faturamentodia.length === 4) {
+        if (faturamentodia.length === 3){
+            $(this).mask('0.00')
+        } else if (faturamentodia.length === 4) {
             $(this).mask('00.00');
         } else if (faturamentodia.length === 5) {
             $(this).mask('000.00');
