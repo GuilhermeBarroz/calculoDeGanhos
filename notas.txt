@@ -1,9 +1,9 @@
 Calcular deprecisao do veiculo
 Adicionar botao dropdown com opcao de carro ou moto, para assim calcular a depreciacao
-fazer uma function pra cada operacao realizada no script
-fazer frontend com bootstrap
-Trocar let por const nos inputs de dados
+fazer uma function pra cada operacao realizada no script - FEITO
+fazer frontend com bootstrap - FEITO
+Trocar let por const nos inputs de dados - FEITO
 pensar de forma mais detalhada em como calcular faturamento por hora. Como representar as horas e minutos, como e se precisa converter para informacoes mais precisas.
-Criar botao para limpar o form
+Criar botao para limpar o form - FEITO
 Criar validacao para verificar se os campos estao preenchidos antes de enviar o formulario
 Criar pop-up com os calculos realizados.
