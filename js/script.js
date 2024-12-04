@@ -38,3 +38,9 @@ document.addEventListener("submit", (event) =>{
 
 })
 
+document.addEventListener("reset", (e) =>{
+    function limparInputs(){
+        let inputs = document.querySelectorAll(".form-control");
+        inputs.value = ""
+    }
+})
