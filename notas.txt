@@ -7,3 +7,4 @@ pensar de forma mais detalhada em como calcular faturamento por hora. Como repre
 Criar botao para limpar o form - FEITO
 Criar validacao para verificar se os campos estao preenchidos antes de enviar o formulario
 Criar pop-up com os calculos realizados.
+Habilitar botao apenas quando todos os campos dos formulario forem preenchidos

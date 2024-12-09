@@ -8,6 +8,16 @@ document.addEventListener("submit", (event) =>{
     const precoCombustivel = Number(document.getElementById("iprecoCombustivel").value);
     const custoAlimentacao = Number(document.getElementById("icustoAlimentacao").value);
 
+
+    function evitarDivisaoPorZero(){
+        if(consumoPorKm === 0 || consumoPorKm === "" || kmRodado === 0 || kmRodado === ""){
+            alert("Valores de consumo ou KM rodado não podem ser zero ou vazio.");
+            return;
+        }
+    } 
+
+    evitarDivisaoPorZero();
+
     function calcularConsumoCombustivel(kmRodado, consumoPorKm){
         return kmRodado / consumoPorKm;
     }
@@ -24,9 +34,13 @@ document.addEventListener("submit", (event) =>{
         return faturamentoDia - custoAlimentacao - custoCombustivel;
     }
 
-
-    let exibirResultados = document.querySelector(".span");
+    function exibirResultados(){
+        let exibirResultados = document.querySelector(".span");
         exibirResultados.style.display = "block";
+        return;
+    }
+
+    exibirResultados();
 
     let litrosCombustivel = calcularConsumoCombustivel(kmRodado, consumoPorKm);
     let custoCombustivel = calcularCustoCombustivel(precoCombustivel, litrosCombustivel);
