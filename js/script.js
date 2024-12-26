@@ -70,3 +70,4 @@ document.addEventListener("reset", (e) =>{
 
     limparInputs();
 });
+

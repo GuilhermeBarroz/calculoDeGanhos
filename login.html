@@ -18,21 +18,21 @@
             <div class="col-md-6 col-lg-4">
                 <form class="">
                     <div class="form-floating">
-                        <input type="email" class="form-control" id="iemail" name="email" placeholder="E-mail">
+                        <input type="email" class="form-control" id="iemail" name="email" placeholder="E-mail" oninput="validarCampos()">
                         <label for="iemail">E-mail</label>
                     </div>
                     
                     <div class="form-floating">
-                        <input type="password" class="form-control" id="isenha" name="senha" placeholder="Senha">
+                        <input type="password" class="form-control" id="isenha" name="senha" placeholder="Senha" oninput="validarCampos()">
                         <label for="isenha">Senha</label>
                     </div>
                     
-                    <div class="text-center mt-4 mb-4" id="recuperarSenha">
+                    <div class="text-center mt-4 mb-4" id="recuperarSenha" >
                         <a href="">Recuperar senha</a>
                     </div>
 
                     <div class="d-grid">
-                        <button type="submit" class="btn btn-primary py-2">Entrar</button>
+                        <button type="submit" class="btn btn-primary py-2" id="iEntrar" disabled="true" >Entrar</button>
                     </div>
 
                     <div class="d-grid py-2">
@@ -48,5 +48,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/validarCampos.js"></script>
 </body>
 </html>
