@@ -18,15 +18,16 @@
             <div class="col-md-6 col-lg-4">
                 <form class="">
                     <div class="form-floating">
-                        <input type="email" class="form-control" id="iemail" name="email" placeholder="E-mail" oninput="validarCampos()">
+                        <input type="email" class="form-control" id="iemail" name="email" placeholder="E-mail" onchange="validarCampos()" oninput="ValidarErroEmail()">
                         <label for="iemail">E-mail</label>
                     </div>
-                    
+                    <span class="error" id="emailInvalido">Email inválido</span>
+                    <span class="error" id="emailObrigatorio">Email é obrigatório</span>
                     <div class="form-floating">
-                        <input type="password" class="form-control" id="isenha" name="senha" placeholder="Senha" oninput="validarCampos()">
+                        <input type="password" class="form-control" id="isenha" name="senha" placeholder="Senha" onchange="validarCampos()" oninput="ValidarErroSenha()">
                         <label for="isenha">Senha</label>
                     </div>
-                    
+                    <span class="error" id="senhaObrigatoria">Senha é obrigatória</span>
                     <div class="text-center mt-4 mb-4" id="recuperarSenha" >
                         <a href="">Recuperar senha</a>
                     </div>
