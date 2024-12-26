@@ -1,0 +1,16 @@
+input[type="email"] {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    height: 5rem;
+}
+
+input[type="password"] {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    height: 5rem;
+}
+
+#recuperarSenha > a{
+    text-decoration: none;
+}
+
