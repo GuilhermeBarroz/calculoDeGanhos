@@ -15,5 +15,14 @@ function cadastrar(){
     });
 }
 
+function cadastroRealizado(){
+    const btnCadastreSe = document.getElementById("iCadastre-se");
+
+    btnCadastreSe.addEventListener("click", function (e){
+        e.preventDefault();
+        window.location.href = "login.html";
+    });
+}
+
 document.addEventListener("DOMContentLoaded", login);
 document.addEventListener("DOMContentLoaded", cadastrar);
