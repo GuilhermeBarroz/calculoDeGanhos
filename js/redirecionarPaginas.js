@@ -26,3 +26,4 @@ function cadastroRealizado(){
 
 document.addEventListener("DOMContentLoaded", login);
 document.addEventListener("DOMContentLoaded", cadastrar);
+document.addEventListener("DOMContentLoaded", cadastroRealizado);

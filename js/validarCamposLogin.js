@@ -1,3 +1,7 @@
+function validarEmail(email) {
+    return /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/.test(email);
+}
+
 function validarCampos() {
     const email = document.getElementById("iemail").value;
     const senha = document.getElementById("isenha").value;
@@ -21,6 +25,7 @@ function ValidarErroEmail(){
     }
 }
 
+
 function ValidarErroSenha(){
     const senha = document.getElementById("isenha").value;
     if(!senha){
@@ -28,8 +33,4 @@ function ValidarErroSenha(){
     } else{
         document.getElementById("senhaObrigatoria").style.display = "none"
     }
-}
-
-function validarEmail(email) {
-    return /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/.test(email);
 }
