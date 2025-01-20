@@ -51,11 +51,25 @@
     
 </body>
 
-<script src="https://www.gstatic.com/firebasejs/9.16.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.16.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.16.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.16.0/firebase-auth-compat.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/validarCamposLogin.js"></script>
 <script src="js/redirecionarPaginas.js"></script>
 <script src="js/fireBaseConfig.js"></script>
+
+<script>
+    const firebaseConfig = {
+        apiKey: "AIzaSyCCLzCT8slvGo74vvu5A01raA9sLniM6UE",
+        authDomain: "calculadoradeganhos.firebaseapp.com",
+        projectId: "calculadoradeganhos",
+        storageBucket: "calculadoradeganhos.firebasestorage.app",
+        messagingSenderId: "432433536053",
+        appId: "1:432433536053:web:d0c2f3a54b718aa05ce57c"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+</script>
+
 </html>
