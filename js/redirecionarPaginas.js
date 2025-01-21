@@ -7,11 +7,14 @@ function login() {
         const email = document.getElementById("iemail").value;
         const senha = document.getElementById("isenha").value;
         
+        exibirLoading();
         firebase.auth().signInWithEmailAndPassword(email, senha)
             .then(response => {
+                esconderLoading();
                 window.location.href = "index.html";
             })
             .catch(error => {
+                esconderLoading();
                 alert(getErrorMessage(error));
             });
     });
@@ -27,7 +30,6 @@ function getErrorMessage(error){
 
 function cadastrar(){
     const btnCadastrar = document.getElementById("iCadastrar");
-
     btnCadastrar.addEventListener("click", function (e){
         e.preventDefault();
         window.location.href = "cadastro.html";
