@@ -1,3 +1,21 @@
+function pegarMensagemErro(error){
+    if (error.code == 'auth/invalid-login-credentials'){
+        return "Usuário não encontrado"
+    }
+    if(error.code == 'auth/user-not-found'){
+        return "Usuário não encontrado";
+    } 
+    if(error.code == 'auth/missing-email'){
+        return "Email inválido"
+    }
+    if(error.code == 'auth/invalid-emai'){
+        return "Email inválido"
+    }
+    else {
+        return error.message
+    }
+}
+
 function login() {
     const btnEntrar = document.getElementById("iEntrar");
     
@@ -15,18 +33,11 @@ function login() {
             })
             .catch(error => {
                 esconderLoading();
-                alert(getErrorMessage(error));
+                alert(pegarMensagemErro(error));
             });
     });
 }
 
-function getErrorMessage(error){
-    if (error.code == 'auth/invalid-login-credentials'){
-        return "Usuário não encontrado"
-    } else {
-        return error.message
-    }
-}
 
 function cadastrar(){
     const btnCadastrar = document.getElementById("iCadastrar");
@@ -45,6 +56,27 @@ function cadastroRealizado(){
     });
 }
 
+function esqueciMinhaSenha(){
+    const btnEsqueciMinhaSenha = document.getElementById("iEsqueciMinhaSenha");
+
+    btnEsqueciMinhaSenha.addEventListener("click", function(e){
+        e.preventDefault();
+        window.location.href = "recuperarSenha.html"
+    });
+
+}
+
+function recuperarSenha(){
+    const btnRecuperarSenha = document.getElementById("iRecuperarSenha");
+
+    btnRecuperarSenha.addEventListener("click", function(e){
+        e.preventDefault()
+        
+    });
+}
+
+document.addEventListener("DOMContentLoaded", recuperarSenha);
+document.addEventListener("DOMContentLoaded", esqueciMinhaSenha);
 document.addEventListener("DOMContentLoaded", login);
 document.addEventListener("DOMContentLoaded", cadastrar);
 document.addEventListener("DOMContentLoaded", cadastroRealizado);

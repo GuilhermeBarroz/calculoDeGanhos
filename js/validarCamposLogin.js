@@ -6,9 +6,10 @@ function validarCampos() {
     const email = document.getElementById("iemail").value;
     const senha = document.getElementById("isenha").value;
     const btnEntrar = document.getElementById("iEntrar");
-
+    
     btnEntrar.disabled = !email || !senha || !validarEmail(email);
 }
+
 
 function ValidarErroEmail(){
     const email = document.getElementById("iemail").value;

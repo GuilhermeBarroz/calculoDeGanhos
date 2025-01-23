@@ -10,6 +10,7 @@ function exibirLoading(){
 
     // Adiciona o span como filho do div
     div.appendChild(span);
+    setTimeout(5000)
 }
 
 function esconderLoading(){
