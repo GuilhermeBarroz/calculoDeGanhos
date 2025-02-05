@@ -11,6 +11,12 @@ function pegarMensagemErro(error){
     if(error.code == 'auth/invalid-emai'){
         return "Email inválido"
     }
+    if(error.code == 'auth/weak-password'){
+        return "Senha deve ter pelo menos 6 caracteres"
+    }
+    if(error.code == 'auth/email-already-in-use'){
+        return "E-mail ja cadastrado"
+    }
     else {
         return error.message
     }
@@ -47,12 +53,27 @@ function cadastrar(){
     });
 }
 
-function cadastroRealizado(){
+function cadastrarUsuario(){
     const btnCadastreSe = document.getElementById("iCadastre-se");
 
     btnCadastreSe.addEventListener("click", function (e){
         e.preventDefault();
-        window.location.href = "login.html";
+
+        const email = document.getElementById("iemail").value;
+        const senha = document.getElementById("isenha").value;
+
+        exibirLoading();
+        firebase.auth().createUserWithEmailAndPassword(email, senha)
+        .then(() =>{
+            esconderLoading();
+            document.getElementById("sucesso").style.display = "block";
+            setTimeout(() =>{
+            window.location.href = "login.html";
+            }, 2000);
+        }).catch(error =>{
+            esconderLoading();
+            alert(pegarMensagemErro(error));
+        })
     });
 }
 
@@ -79,4 +100,4 @@ document.addEventListener("DOMContentLoaded", recuperarSenha);
 document.addEventListener("DOMContentLoaded", esqueciMinhaSenha);
 document.addEventListener("DOMContentLoaded", login);
 document.addEventListener("DOMContentLoaded", cadastrar);
-document.addEventListener("DOMContentLoaded", cadastroRealizado);
+document.addEventListener("DOMContentLoaded", cadastrarUsuario);

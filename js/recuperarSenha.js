@@ -13,6 +13,6 @@ function recuperarSenha(){
     })
     .catch(error => {
         esconderLoading();
-        alert(pegarMensagemErro(error));
+        alert("erro")
     })
 }

@@ -33,3 +33,17 @@ input[type="email"] {
     color: red;
     display: none;
 }
+
+.loading{
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sucesso{
+    display: none;
+}
