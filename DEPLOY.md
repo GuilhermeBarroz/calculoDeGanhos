@@ -1,5 +1,17 @@
 # Publicação no Cloudflare Pages
 
+## Projeto atual criado como Workers
+
+Os logs do painel identificaram o Worker `calculodeganhos`. Para continuar nesse projeto, o arquivo `wrangler.jsonc` configura explicitamente `assets.directory` como `./dist`. Isso impede a detecção automática da raiz do repositório como pasta pública.
+
+- Build command: `npm run build`.
+- Deploy command: `npx wrangler deploy`.
+- Versione `wrangler.jsonc` e envie para a branch conectada antes de tentar novamente.
+- Não use `assets.directory: "."`: isso incluiria documentação, dependências e arquivos legados.
+- O build local foi conferido; o deploy remoto precisa ser repetido no Cloudflare.
+
+As instruções de Pages abaixo se aplicam caso seja criado um projeto Pages separado. No Worker, associe o domínio pela configuração de domínios do próprio Worker, não por um CNAME para `pages.dev`.
+
 Endereço definido: **https://calculadoradeganhos.conexo.app.br/**.
 Os arquivos estão preparados; este procedimento ainda não publicou o site nem alterou DNS.
 
