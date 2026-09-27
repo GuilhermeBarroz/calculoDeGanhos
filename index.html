@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <script src="js/calculations.js" defer></script>
     <script src="js/config.js" defer></script>
+    <script src="js/analytics.js" defer></script>
     <script src="js/script.js" defer></script>
   </head>
   <body>
@@ -216,11 +217,32 @@
       </section>
     </main>
     <footer>
+      <details id="analytics-preferences">
+        <summary>Privacidade e estatísticas de acesso</summary>
+        <p>
+          Com sua permissão, usamos Google Analytics para medir visitas, origem dos acessos e uso
+          das calculadoras. O Google recebe dados técnicos de navegação e utiliza cookies. Não
+          enviamos os valores preenchidos nos formulários. Sua escolha fica salva neste navegador e
+          pode ser alterada aqui a qualquer momento.
+        </p>
+        <p>
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer"
+            >Política de privacidade do Google</a
+          >
+        </p>
+        <p id="analytics-status" role="status"></p>
+        <button id="analytics-accept" type="button" class="clear-button">
+          Aceitar estatísticas
+        </button>
+        <button id="analytics-decline" type="button" class="clear-button">
+          Recusar estatísticas
+        </button>
+      </details>
       <span>Calculadora de Ganhos</span>
       <span>Feita para ajudar em cada trajeto.</span>
       <p>
-        Não salvamos seus cálculos. Apenas sua escolha de aparência pode ser lembrada neste
-        navegador.
+        Não salvamos seus cálculos. Suas preferências de aparência e estatísticas podem ser
+        lembradas neste navegador.
       </p>
     </footer>
   </body>

@@ -726,3 +726,17 @@ footer {
     display: none;
   }
 }
+#analytics-preferences {
+  flex-basis: 100%;
+  margin-top: 0;
+  border-top: 0;
+}
+#analytics-preferences p {
+  margin-block: 12px;
+  max-width: 720px;
+}
+#analytics-preferences button {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin: 4px 8px 4px 0;
+}

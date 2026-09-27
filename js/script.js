@@ -58,6 +58,7 @@
     }
     mode = button.dataset.mode;
     const config = modes[mode];
+    window.GanhosAnalytics?.track('calculator_selected', mode);
     document
       .querySelectorAll('[data-mode]')
       .forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
@@ -146,6 +147,7 @@
       return;
     }
     renderResult(values, { config, revenue, distance, consumption, fuelPrice, expenses });
+    window.GanhosAnalytics?.track('calculation_completed', mode);
   });
   function renderResult(values, { config, revenue, distance, consumption, fuelPrice, expenses }) {
     document.getElementById('result-label').textContent = config.result;

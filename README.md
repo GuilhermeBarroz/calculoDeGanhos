@@ -1,6 +1,6 @@
 # Calculadora de Ganhos
 
-Ferramenta gratuita para motoristas, entregadores e viagens pessoais. Sem cadastro ou histórico: os cálculos são feitos no navegador. Apenas a preferência de aparência é armazenada localmente.
+Ferramenta gratuita para motoristas, entregadores e viagens pessoais. Sem cadastro ou histórico: os cálculos são feitos no navegador. As preferências de aparência e consentimento são armazenadas localmente.
 
 ## Funcionalidades
 
@@ -17,7 +17,7 @@ O saldo desconta somente os custos informados. Não é lucro líquido: manutenç
 
 ## Tecnologias e estrutura
 
-HTML, CSS, JavaScript e Bootstrap 5.3.3 via CDN. Não há backend nem dependências JavaScript de produção. Um script Node prepara `dist/` para publicação; Prettier é uma dependência apenas de desenvolvimento. A página principal não carrega jQuery, Firebase, anúncios ou Analytics.
+HTML, CSS, JavaScript e Bootstrap 5.3.3 via CDN. Não há backend nem dependências JavaScript de produção. Um script Node prepara `dist/` para publicação; Prettier é uma dependência apenas de desenvolvimento. A página principal não carrega jQuery, Firebase ou anúncios. Analytics é opcional, condicionado à permissão do visitante.
 
 | Arquivo                                              | Responsabilidade                                              |
 | ---------------------------------------------------- | ------------------------------------------------------------- |
@@ -101,9 +101,9 @@ Arredondamento ocorre apenas na apresentação. Ao alterar uma entrada, o result
 
 ## Privacidade e próximas etapas
 
-Nenhum cálculo é persistido ou enviado a um servidor. A chave local `ganhos-theme` guarda somente Sistema/Claro/Escuro. O Bootstrap faz uma requisição à CDN, independente dos valores dos formulários.
+Nenhum cálculo é persistido ou enviado a um servidor. A chave local `ganhos-theme` guarda Sistema/Claro/Escuro; `ganhos-analytics-consent` guarda a escolha de estatísticas. O Bootstrap faz uma requisição à CDN, independente dos valores dos formulários.
 
-Analytics permanece desativado. Na etapa final, configurar nova conta, revisar privacidade e consentimento aplicáveis e medir acessos, seleção de calculadora e conclusão de cálculos, sem transmitir valores preenchidos. Cloudflare Pages foi escolhido, com domínio `calculadoradeganhos.conexo.app.br`. Os arquivos estão preparados; a publicação e o DNS ainda não foram realizados. Consulte [DEPLOY.md](DEPLOY.md) para envio manual ou integração Git.
+GA4 `G-RVTLBH84P5` integrado em `js/analytics.js`, somente no domínio de produção e após aceitação. Eventos: `calculator_selected` e `calculation_completed`, contendo apenas `calculator_type`. A tag mede visitas e dados técnicos; nenhum valor dos formulários integra os eventos personalizados. A recusa impede novos eventos; a preferência pode ser revista no rodapé. O carregamento e a fila de eventos foram testados com rede simulada, sem enviar dados ao Google. A recepção no GA4 precisa ser confirmada após publicar. Consulte [DEPLOY.md](DEPLOY.md).
 
 ## Documentação e skills
 

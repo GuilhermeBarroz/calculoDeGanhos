@@ -10,6 +10,7 @@ const publicFiles = [
   'css/style.css',
   'js/calculations.js',
   'js/config.js',
+  'js/analytics.js',
   'js/script.js',
   'js/theme.js',
   'images/favicon.svg',

@@ -78,4 +78,6 @@ O servidor Python local não interpreta `_headers` e `_redirects`; valide essas 
 
 ## Analytics
 
-Permanece desativado, incluindo a configuração antiga. Após a criação da nova conta, configurar o identificador, eventos sem valores dos formulários e as informações de privacidade e consentimento aplicáveis. Não é necessário Analytics para publicar esta versão.
+Identificador integrado: `G-RVTLBH84P5`. O script só carrega no domínio `calculadoradeganhos.conexo.app.br` após o visitante aceitar estatísticas no rodapé. localhost e pages.dev não coletam dados. Após publicar, aceite estatísticas, escolha uma calculadora e conclua um cálculo; confira no GA4 em Tempo real/DebugView com Tag Assistant. Desative a medição otimizada de interações de formulário no fluxo Web e registre `calculator_type` como dimensão personalizada de escopo de evento. Confirme que os eventos não incluem valores dos formulários. A configuração antiga permanece fora do pacote.
+
+Referência: [Consent Mode do Google](https://developers.google.com/tag-platform/security/guides/consent).
