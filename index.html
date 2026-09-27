@@ -1,80 +1,227 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calcular Ganhos</title>
-    <link rel="shortcut icon" href="images/image.png" type="image/x-icon">
-
-    <!-- GOOGLE ANALITYCS -->
-  
-
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- BOOTSTRAP -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-    <!-- JQUERY -->
-    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
-    
-    <!-- GOOGLE ADS -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7397698023526166"
-     crossorigin="anonymous"></script>
-
-</head>
-<body class="container my-5">
-    <header class="mb-4">
-        <h1 class="text-center">Calculadora de Ganhos</h1>
+<!doctype html>
+<html lang="pt-BR" data-bs-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Calcule custos e saldo do seu turno, corrida, entrega ou viagem. Grátis e sem cadastro."
+    />
+    <link rel="canonical" href="https://calculadoradeganhos.conexo.app.br/" />
+    <meta property="og:title" content="Calculadora de Ganhos" />
+    <meta
+      property="og:description"
+      content="Custos e saldo do seu turno, corrida, entrega ou viagem. Grátis e sem cadastro."
+    />
+    <meta property="og:url" content="https://calculadoradeganhos.conexo.app.br/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Calculadora de Ganhos — cada quilômetro conta</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <script src="js/theme.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/calculations.js" defer></script>
+    <script src="js/config.js" defer></script>
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Pular para o conteúdo</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Calculadora de Ganhos — início">
+        <span class="brand-mark" aria-hidden="true">↗</span>
+        <span>Calculadora<span class="brand-sub">de Ganhos</span> </span>
+      </a>
     </header>
-    <main>
-        <form action="" id="form" class="row g-3">
-            <div class="col-md-6">
-                <label for="ifaturamentoDia" class="form-label">Faturamento do dia</label>
-                <input type="text" name="faturamentoDia" id="ifaturamentoDia" class="form-control" placeholder="Ex: 150.00" required>
+    <div class="theme-float">
+      <span id="theme-caption" class="theme-caption" aria-hidden="true">Sistema</span>
+      <button
+        id="theme"
+        class="theme-button"
+        type="button"
+        aria-label="Tema: Sistema. Alterar para Claro."
+        title="Tema: Sistema. Alterar para Claro."
+      >
+        <svg
+          data-theme-icon="system"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <rect x="3" y="4" width="18" height="13" rx="2" />
+          <path d="M8 21h8m-4-4v4" />
+        </svg>
+        <svg
+          data-theme-icon="light"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.7"
+          stroke-linecap="round"
+          aria-hidden="true"
+          hidden
+        >
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5" />
+        </svg>
+        <svg
+          data-theme-icon="dark"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+          hidden
+        >
+          <path d="M20.5 14.2A8.7 8.7 0 0 1 9.8 3.5a8.7 8.7 0 1 0 10.7 10.7Z" />
+        </svg>
+      </button>
+      <span id="theme-status" class="visually-hidden" role="status"></span>
+    </div>
+    <main id="main" tabindex="-1">
+      <section class="intro" aria-labelledby="intro-title">
+        <p class="eyebrow">PARA QUEM ESTÁ NA RUA</p>
+        <h1 id="intro-title">
+          Cada quilômetro conta.<br />
+          <span>Saiba o que fica para você.</span>
+        </h1>
+        <p class="intro-copy">
+          Do primeiro trajeto ao fim do turno, entenda seus custos e faça as contas com clareza.
+        </p>
+        <p class="privacy-badge">
+          <span aria-hidden="true">✓</span> Grátis, sem cadastro. Seus cálculos ficam só aqui.
+        </p>
+      </section>
+      <section aria-labelledby="mode-title">
+        <div class="section-heading">
+          <span class="step">01</span>
+          <h2 id="mode-title">O que você quer calcular?</h2>
+        </div>
+        <div class="mode-grid">
+          <button
+            class="mode-card"
+            type="button"
+            data-mode="shift"
+            aria-pressed="false"
+            aria-controls="calculator"
+          >
+            <span class="mode-icon" aria-hidden="true">◷</span>
+            <strong>Meu dia ou turno</strong>
+            <span>Veja o saldo do seu trabalho.</span>
+            <span class="mode-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button
+            class="mode-card"
+            type="button"
+            data-mode="ride"
+            aria-pressed="false"
+            aria-controls="calculator"
+          >
+            <span class="mode-icon" aria-hidden="true">⇄</span>
+            <strong>Uma corrida ou entrega</strong>
+            <span>Estime os custos antes de sair.</span>
+            <span class="mode-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button
+            class="mode-card"
+            type="button"
+            data-mode="trip"
+            aria-pressed="false"
+            aria-controls="calculator"
+          >
+            <span class="mode-icon" aria-hidden="true">↗</span>
+            <strong>Uma viagem</strong>
+            <span>Planeje quanto vai gastar.</span>
+            <span class="mode-arrow" aria-hidden="true">↗</span>
+          </button>
+        </div>
+      </section>
+      <noscript>
+        <p>Ative o JavaScript no navegador para usar as calculadoras.</p>
+      </noscript>
+      <section id="calculator" class="calculator" hidden aria-labelledby="calculator-title">
+        <div class="form-panel">
+          <div class="section-heading">
+            <span class="step">02</span>
+            <h2 id="calculator-title" tabindex="-1"></h2>
+          </div>
+          <p id="calculator-help" class="muted"></p>
+          <p class="field-guide">
+            Campos com * são obrigatórios. Use vírgula ou ponto, sem separador de milhar.
+          </p>
+          <form id="calculator-form" novalidate>
+            <div id="fields" class="field-grid"></div>
+            <fieldset id="duration" class="duration">
+              <legend>Tempo <span class="muted">· opcional</span></legend>
+              <p class="field-hint">Informe para ver também o saldo por hora.</p>
+              <div id="time-fields" class="field-grid"></div>
+            </fieldset>
+            <details id="expenses">
+              <summary>Adicionar despesas <span class="muted">· opcional</span></summary>
+              <div id="expense-fields" class="field-grid"></div>
+            </details>
+            <p id="form-error" class="error-summary" role="alert" hidden></p>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">
+                Calcular <span aria-hidden="true">→</span>
+              </button>
+              <button type="reset" class="clear-button">Limpar</button>
             </div>
-            <div class="col-md-6">
-                <label for="ikmRodado" class="form-label">Quilômetros rodados</label>
-                <input type="text" name="kmRodado" id="ikmRodado" class="form-control" placeholder="Ex: 120.00" required>
-            </div>
-            <div class="col-md-6">
-                <label for="iprecoCombustivel" class="form-label">Preço do combustível</label>
-                <input type="text" name="precoCombustivel" id="iprecoCombustivel" class="form-control" placeholder="Ex: 6.50" required>
-            </div>
-            <div class="col-md-6">
-                <label for="consumoPorKm" class="form-label">Consumo do veículo (km/L)</label>
-                <input type="text" name="consumoPorKm" id="iconsumoPorKm" class="form-control" placeholder="Ex: 12" required>
-            </div>
-            <div class="col-md-6">
-                <label for="icustoAlimentacao" class="form-label">Gasto com alimentação</label>
-                <input type="text" name="custoAlimentacao" id="icustoAlimentacao" class="form-control" placeholder="Ex: 25.00" required>
-            </div>
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary w-100" id="iCalcular">Calcular</button>
-            </div>
-            <div class="col-12">
-                <button type="reset" class="btn btn-secondary w-100">Limpar</button>
-            </div>
-        </form>
-        <span class="container span" disabled>
-            <div id="resultados" class="p-2 text-info-emphasis bg-info-subtle border border-info-subtle rounded-3">
-                <p id="resultadoFaturamentoDia"></p>
-                <p id="resultadoConsumoCombustivel"></p>
-                <p id="resultadoCustoCombustivel"></p>
-                <p id="resultadoCustoAlimentacao"></p>
-                <p id="resultadoFaturamentoPorKm"></p>
-                <p id="resultadoLucroDia"></p>
-            </div>
-        </span>
+          </form>
+        </div>
+        <aside class="result-panel" aria-labelledby="result-heading">
+          <p class="eyebrow">SUAS CONTAS, ÀS CLARAS</p>
+          <h2 id="result-heading" tabindex="-1">Seu resultado</h2>
+          <div id="result-empty">
+            <div class="empty-symbol" aria-hidden="true">=</div>
+            <p>Um pouco de informação.<br />Mais clareza para decidir.</p>
+            <p class="muted">Preencha os campos e toque em Calcular para ver os detalhes aqui.</p>
+          </div>
+          <div id="result" hidden>
+            <p id="result-label"></p>
+            <p id="result-value" class="result-value"></p>
+            <p id="negative-note" class="negative-note" hidden>
+              Saldo negativo: os custos informados superam o valor recebido.
+            </p>
+            <dl id="result-details"></dl>
+            <details class="formula">
+              <summary>Entenda a conta</summary>
+              <p id="formula-text"></p>
+            </details>
+          </div>
+          <p class="result-disclaimer">
+            Uma estimativa com os custos que você informar. Não inclui manutenção, depreciação ou
+            outros custos do veículo.
+          </p>
+        </aside>
+      </section>
+      <section class="about">
+        <h2>Menos dúvida. Mais clareza.</h2>
+        <p>
+          Para carro ou moto, passageiros ou entregas. Informe o consumo do seu veículo e a
+          distância total — a conta se adapta à sua rotina.
+        </p>
+      </section>
     </main>
-    <footer class="text-center mt-5">
-        <p>&copy; 2024 Calculadora de Ganhos</p>
+    <footer>
+      <span>Calculadora de Ganhos</span>
+      <span>Feita para ajudar em cada trajeto.</span>
+      <p>
+        Não salvamos seus cálculos. Apenas sua escolha de aparência pode ser lembrada neste
+        navegador.
+      </p>
     </footer>
-</body>
-<script src="js/script.js"></script>
-<script src="js/mask.js"></script>
-<script src="js/googleAnalytics.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<script src="js/googleAds.js"></script>
+  </body>
 </html>

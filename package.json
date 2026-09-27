@@ -1,0 +1,18 @@
+{
+  "name": "calculadora-de-ganhos",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.cjs",
+    "test": "node --test tests/calculations.test.cjs",
+    "test:browser": "node tests/browser.cjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "prettier": "3.9.9"
+  }
+}

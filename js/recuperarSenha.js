@@ -1,18 +1,19 @@
-function recuperarSenha(){
-    const email = document.getElementById("iemailRecuperar").value;
+function recuperarSenha() {
+  const email = document.getElementById('iemailRecuperar').value;
 
-    exibirLoading();
-    firebase.auth().sendPasswordResetEmail(email)
+  exibirLoading();
+  firebase
+    .auth()
+    .sendPasswordResetEmail(email)
     .then(() => {
-        esconderLoading();
-        document.getElementById("sucesso").style.display = "block";
-        setTimeout(() =>{
-            window.location.href = "login.html";
-        }, 2000);
-        
+      esconderLoading();
+      document.getElementById('sucesso').style.display = 'block';
+      setTimeout(() => {
+        window.location.href = 'login.html';
+      }, 2000);
     })
-    .catch(error => {
-        esconderLoading();
-        alert("erro")
-    })
+    .catch((error) => {
+      esconderLoading();
+      alert('erro');
+    });
 }
