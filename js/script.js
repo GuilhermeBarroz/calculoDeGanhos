@@ -29,11 +29,14 @@
     empty.hidden = false;
   }
   function revealCalculator() {
-    const panel = document.getElementById('calculator');
+    revealPanel(document.getElementById('calculator'), 'calculator-title');
+  }
+
+  function revealPanel(panel, headingId) {
     // Stop any previous animation before measuring a new destination.
     window.scrollTo({ top: window.scrollY, behavior: 'instant' });
     const headerHeight = document.querySelector('.site-header').getBoundingClientRect().height;
-    document.getElementById('calculator-title').focus({ preventScroll: true });
+    document.getElementById(headingId).focus({ preventScroll: true });
     window.scrollTo({
       top: window.scrollY + panel.getBoundingClientRect().top - headerHeight - 16,
       behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -191,6 +194,6 @@
       `${decimal.format(distance)} km ÷ ${decimal.format(consumption)} km/L = ${decimal.format(values.liters)} L. Combustível: litros × ${money.format(fuelPrice)}/L. ${mode === 'trip' ? 'Custo total = combustível + despesas adicionais.' : 'Saldo = valor recebido − combustível − despesas adicionais.'} Os cálculos usam a precisão completa; os valores exibidos são arredondados.`;
     empty.hidden = true;
     result.hidden = false;
-    document.getElementById('result-heading').focus();
+    revealPanel(document.querySelector('.result-panel'), 'result-heading');
   }
 })();

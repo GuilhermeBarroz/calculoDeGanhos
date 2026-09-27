@@ -12,6 +12,7 @@ Ferramenta gratuita para motoristas, entregadores e viagens pessoais. Sem cadast
 - Botão flutuante de aparência: monitor, sol e lua alternam Sistema → Claro → Escuro. No celular fica no canto superior direito, junto ao cabeçalho fixado; no computador, no canto inferior direito.
 - Formulários responsivos, erros junto aos campos, navegação por teclado e indicação textual de saldo negativo.
 - Escolher uma calculadora rola até o formulário, abaixo do cabeçalho; a rolagem respeita a preferência por movimento reduzido.
+- Calcular com dados válidos rola até os resultados; erros mantêm o foco no campo que precisa de correção.
 
 O saldo desconta somente os custos informados. Não é lucro líquido: manutenção, depreciação e outros custos não estão incluídos. Distâncias são manuais, sem mapas.
 
