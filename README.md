@@ -114,3 +114,7 @@ GA4 `G-RVTLBH84P5` integrado em `js/analytics.js`, somente no domínio de produ�
 - [CLAUDE.md](CLAUDE.md) e [ANTIGRAVITY.md](ANTIGRAVITY.md): pontos de entrada para agentes.
 
 Antes de cada etapa, consultar a skill adequada em `C:\Users\Guilherme\.agents\skills`. Nesta implementação foram usadas orientações de JavaScript e frontend; a validação inclui práticas de acessibilidade e testes de interface. Playwright foi utilizado pela versão Node disponível no ambiente, pois o módulo Python não estava instalado.
+
+## Identidade visual
+
+A marca do cabeçalho usa uma calculadora apoiada em uma mão contornada. Os arquivos vetoriais images/logo.svg e images/logo-dark.svg acompanham o tema da página; o nome permanece como texto acessível. O favicon images/favicon.svg usa apenas a calculadora para legibilidade em tamanho pequeno. Os três SVGs integram a lista pública do build.

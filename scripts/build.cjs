@@ -14,6 +14,8 @@ const publicFiles = [
   'js/script.js',
   'js/theme.js',
   'images/favicon.svg',
+  'images/logo.svg',
+  'images/logo-dark.svg',
   'robots.txt',
   'sitemap.xml',
   '_headers',
